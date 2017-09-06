@@ -1,2 +1,5 @@
-# cloudflare-ddns
-A simple script to dynamically update CloudFlare DNS records.
+# Cloudflare DDNS
+
+##\#TODO: Scripts and instructions for all known systems
+
+
