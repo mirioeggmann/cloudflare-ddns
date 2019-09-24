@@ -11,4 +11,13 @@ spec:
           containers:
             - name: cloudflare-ddns
               image: mirioeggmann/cloudflare-ddns:latest
+              env:
+              - name: ZONE_ID
+                value: ""
+              - name: RECORD_ID
+                value: ""
+              - name: AUTH_KEY
+                value: ""
+              - name: NAME
+                value: ""
           restartPolicy: OnFailure
