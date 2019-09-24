@@ -1,7 +1,7 @@
 # Cloudflare DDNS
 
 ```
-#Examples
+#Example values for k8s-cronjob.yaml
 
 # Get the ZONE_ID under dash.cloudflare.com -> Your domain -> Overview -> API -> Zone ID
 ZONE_ID                      = 023e105f4ecef8ad9ca31a8372d0c353
