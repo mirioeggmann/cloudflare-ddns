@@ -3,12 +3,12 @@ kind: CronJob
 metadata:
   name: cloudflare-ddns
 spec:
-  schedule: "*/5 * * * *"
+  schedule: "*/1 * * * *"
   jobTemplate:
     spec:
       template:
         spec:
           containers:
             - name: cloudflare-ddns
-              image: mirioeggmann/cloudflare-ddns
+              image: mirioeggmann/cloudflare-ddns:latest
           restartPolicy: OnFailure

@@ -1,15 +1,15 @@
 # Cloudflare DDNS
 
-## Requirements
-- Cloudflare Account
-- A
+```
+get the RECORD_ID: https://api.cloudflare.com/#dns-records-for-a-zone-list-dns-records
 
-## Step by Step Guide with a Synology NAS
-1. Get your [Cloudflare API key](https://support.cloudflare.com/hc/en-us/articles/200167836-Where-do-I-find-my-Cloudflare-API-key-)
-2. ...
-
-
-# TODO Scripts and instructions for all known systems
-...
+# api call doc: https://api.cloudflare.com/#dns-records-for-a-zone-update-dns-record
+#Examples
+#ZONE_ID                      = 023e105f4ecef8ad9ca31a8372d0c353
+#RECORD_ID                    = 372e67954025e0ba6aaa6d586b9e0b59
+#AUTH_EMAIL                   = user@example.com
+#CLOUDFLARE_GLOBAL_API_KEY    = c2547eb745049flc9320b638f5e225cf483cc5cfdda41
+#NAME                         = example.com
 
 docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t mirioeggmann/cloudflare-ddns:latest --push .
+```
