@@ -29,6 +29,15 @@ NAME                         = example.com
 
 ## Execute kubernetes cronjob
 ```
+# 1. Clone the repo
+git clone https://github.com/mirioeggmann/cloudflare-ddns.git
+
+# 2. Navigate into it
+cd cloudflare-ddns
+
+# 3. Edit the k8s-cronjob according to "Values for k8s-cronjob.yaml"
+
+# 4. Start the cronjob
 kubectl apply -f k8s-cronjob.yaml
 ```
 
