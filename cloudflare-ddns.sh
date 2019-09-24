@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 #Examples
 #ZONE_ID                      = 023e105f4ecef8ad9ca31a8372d0c353
