@@ -1,6 +1,20 @@
 # Cloudflare DDNS
 A simple kubernetes cronjob that runs every 5 minutes to check & update the exernal ip.
 
+## Execute kubernetes cronjob
+```
+# 1. Clone the repo
+git clone https://github.com/mirioeggmann/cloudflare-ddns.git
+
+# 2. Navigate into it
+cd cloudflare-ddns
+
+# 3. Edit the k8s-cronjob according to "Values for k8s-cronjob.yaml"
+
+# 4. Start the cronjob
+kubectl apply -f k8s-cronjob.yaml
+```
+
 ## Values for k8s-cronjob.yaml
 
 - Get the ZONE_ID under dash.cloudflare.com -> Your domain -> Overview -> API -> Zone ID
@@ -25,20 +39,6 @@ AUTH_KEY                     = c2547eb745049flc9320b638f5e225cf483cc5cfdda41
 ```
 #example
 NAME                         = example.com
-```
-
-## Execute kubernetes cronjob
-```
-# 1. Clone the repo
-git clone https://github.com/mirioeggmann/cloudflare-ddns.git
-
-# 2. Navigate into it
-cd cloudflare-ddns
-
-# 3. Edit the k8s-cronjob according to "Values for k8s-cronjob.yaml"
-
-# 4. Start the cronjob
-kubectl apply -f k8s-cronjob.yaml
 ```
 
 ## Future work
