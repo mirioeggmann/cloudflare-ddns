@@ -12,3 +12,4 @@
 # TODO Scripts and instructions for all known systems
 ...
 
+docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t mirioeggmann/cloudflare-ddns:latest --push .

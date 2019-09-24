@@ -1,3 +1,3 @@
 FROM alpine:3.10.2
-RUN apt-get update && apt-get install -y curl
+RUN apk add --no-cache curl
 RUN curl ifconfig.co
