@@ -1,5 +1,5 @@
 # Cloudflare DDNS
-A simple kubernetes cronjob that runs every 5 minutes to check & update the exernal ip.
+A kubernetes cronjob that runs every 5 minutes to check & update the exernal ip.
 
 ## Execute kubernetes cronjob
 ```
@@ -9,9 +9,9 @@ git clone https://github.com/mirioeggmann/cloudflare-ddns.git
 # 2. Navigate into it
 cd cloudflare-ddns
 
-# 3. Edit the k8s-cronjob according to "Values for k8s-cronjob.yaml"
+# 3. Edit the k8s-cronjob.yaml according to "Values for k8s-cronjob.yaml"
 
-# 4. Start the cronjob
+# 4. Execute the cronjob
 kubectl apply -f k8s-cronjob.yaml
 ```
 
