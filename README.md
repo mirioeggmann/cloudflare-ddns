@@ -1,4 +1,5 @@
 # Cloudflare DDNS
+A simple kubernetes cronjob that runs every 5 minutes to check & update the exernal ip.
 
 ## Values for k8s-cronjob.yaml
 
@@ -26,6 +27,12 @@ AUTH_KEY                     = c2547eb745049flc9320b638f5e225cf483cc5cfdda41
 NAME                         = example.com
 ```
 
+## Execute kubernetes cronjob
+```
+kubectl apply -f k8s-cronjob.yaml
+```
+
+## Future work
 ```
 # TODO automate this command in Github Actions
 docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t mirioeggmann/cloudflare-ddns:latest --push .
