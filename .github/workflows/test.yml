@@ -1,4 +1,4 @@
-name: buildx
+name: build and push cloudflare-ddns image
 
 on:
   pull_request:
