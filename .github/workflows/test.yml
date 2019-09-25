@@ -11,12 +11,11 @@ jobs:
   buildx:
     runs-on: ubuntu-latest
     steps:
-      - name: Set environment variables
+      -
+        name: Checkout
         env: # Or as an environment variable
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      -
-        name: Checkout
         uses: actions/checkout@v1
       -
         name: Set up Docker Buildx
