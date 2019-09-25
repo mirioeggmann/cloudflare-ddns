@@ -41,4 +41,4 @@ AUTH_KEY                     = c2547eb745049flc9320b638f5e225cf483cc5cfdda41
 NAME                         = example.com
 ```
 
-[Cloudflare API documentation v4](https://api.cloudflare.com/)
+For more Cloudflare API informations read the [Cloudflare API documentation v4](https://api.cloudflare.com/)
