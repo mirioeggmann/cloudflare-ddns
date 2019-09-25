@@ -41,10 +41,4 @@ AUTH_KEY                     = c2547eb745049flc9320b638f5e225cf483cc5cfdda41
 NAME                         = example.com
 ```
 
-## Future work
-```
-# TODO automate this command in Github Actions
-docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t mirioeggmann/cloudflare-ddns:latest --push .
-```
-
 [Cloudflare API documentation v4](https://api.cloudflare.com/)
