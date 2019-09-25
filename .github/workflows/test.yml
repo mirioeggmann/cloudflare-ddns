@@ -13,9 +13,6 @@ jobs:
     steps:
       -
         name: Checkout
-        env: # Or as an environment variable
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         uses: actions/checkout@v1
       -
         name: Set up Docker Buildx
@@ -28,6 +25,9 @@ jobs:
         run: echo ${{ steps.buildx.outputs.platforms }}
       -
         name: Login to DockerHub
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       -
         name: Run Buildx
