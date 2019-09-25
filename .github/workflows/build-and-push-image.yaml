@@ -1,11 +1,10 @@
 name: build and push cloudflare-ddns image
 
 on:
-  pull_request:
-    branches: master
   push:
     branches: master
     tags:
+    - '*'
 
 jobs:
   buildx:
