@@ -1,5 +1,5 @@
 # Cloudflare DDNS
-A kubernetes cronjob that runs every 5 minutes to check & update the exernal ip.
+A kubernetes cronjob that runs a docker-container every 5 minutes to check & update your external ip.
 
 ## Execute kubernetes cronjob
 ```
