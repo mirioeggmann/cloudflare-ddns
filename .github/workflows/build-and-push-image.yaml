@@ -2,8 +2,7 @@ name: build and push cloudflare-ddns image
 
 on:
   push:
-    tags:
-    - '*'
+    branches: master
 
 jobs:
   buildx:
