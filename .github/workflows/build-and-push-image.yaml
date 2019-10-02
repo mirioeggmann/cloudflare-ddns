@@ -2,8 +2,7 @@ name: build and push cloudflare-ddns image
 
 on:
   push:
-    tags: 
-    - '*'
+    branches: master
 
 jobs:
   buildx:
@@ -24,4 +23,4 @@ jobs:
       -
         name: Run Buildx
         run: |
-          docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t mirioeggmann/cloudflare-ddns:latest --push . 
+          docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t mirioeggmann/cloudflare-ddns:$GITHUB_SHA --push . 
