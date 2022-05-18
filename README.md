@@ -35,6 +35,13 @@ RECORD_ID                    = 372e67954025e0ba6aaa6d586b9e0b59
 AUTH_KEY                     = c2547eb745049flc9320b638f5e225cf483cc5cfdda41
 ```
 
+- Specify your cloudflare email
+```
+#example
+AUTH_EMAIL                   = example@example.com
+```
+
+
 - Specify your domain
 ```
 #example

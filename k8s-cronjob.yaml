@@ -18,6 +18,8 @@ spec:
                 value: ""
               - name: AUTH_KEY
                 value: ""
+              - name: AUTH_EMAIL
+                value: ""
               - name: NAME
                 value: ""
           restartPolicy: OnFailure
