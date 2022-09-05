@@ -20,6 +20,8 @@ spec:
                 value: ""
               - name: AUTH_EMAIL
                 value: ""
+              - name: API_TOKEN
+                value: ""
               - name: NAME
                 value: ""
           restartPolicy: OnFailure
