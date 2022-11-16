@@ -24,4 +24,6 @@ spec:
                 value: ""
               - name: NAME
                 value: ""
+              - name: PROXIED
+                value: ""
           restartPolicy: OnFailure
