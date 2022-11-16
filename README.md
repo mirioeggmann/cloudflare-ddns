@@ -29,10 +29,10 @@ RECORD_ID                    = 372e67954025e0ba6aaa6d586b9e0b59
 NAME                         = example.com
 ```
 
-- Specify whether to use Cloudflare's proxying feature
+- Specify whether to use Cloudflare's proxying feature. Must be "true" or "false".
 ```
 #example
-NAME                         = example.com
+PROXIED                         = true
 ```
 
 - Get the ZONE_ID under dash.cloudflare.com -> Your domain -> Overview -> API -> Zone ID
