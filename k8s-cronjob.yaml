@@ -1,4 +1,4 @@
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: cloudflare-ddns
@@ -23,5 +23,7 @@ spec:
               - name: API_TOKEN
                 value: ""
               - name: NAME
+                value: ""
+              - name: PROXIED
                 value: ""
           restartPolicy: OnFailure
