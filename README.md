@@ -23,7 +23,7 @@ kubectl apply -f k8s-cronjob.yaml
 RECORD_ID                    = 372e67954025e0ba6aaa6d586b9e0b59
 ```
 
-- Specify your domain
+- Specify your domain (DNS Record Name)
 ```
 #example
 NAME                         = example.com
