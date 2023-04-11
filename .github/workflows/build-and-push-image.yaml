@@ -5,9 +5,18 @@ on: push
 jobs:
   buildx:
     runs-on: ubuntu-latest
+    if: |
+        (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]') ||
+        (github.event_name != 'pull_request_target' && github.actor != 'dependabot[bot]')
     steps:
       - name: Checkout
+        if: ${{ github.event_name != 'pull_request_target' }}
         uses: actions/checkout@v2
+      - name: Checkout PR
+        if: ${{ github.event_name == 'pull_request_target' }}
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Setup buildx
