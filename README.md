@@ -1,7 +1,8 @@
 # Cloudflare DDNS
 A kubernetes cronjob that runs a docker-container every 5 minutes to check & update your external ip.
 
-## Execute kubernetes cronjob
+## Setup
+### Execute kubernetes cronjob
 ```
 # 1. Clone the repo
 git clone https://github.com/mirioeggmann/cloudflare-ddns.git
@@ -15,7 +16,7 @@ cd cloudflare-ddns
 kubectl apply -f k8s-cronjob.yaml
 ```
 
-## Values for k8s-cronjob.yaml
+### Values for k8s-cronjob.yaml
 
 - Get the RECORD_ID: https://api.cloudflare.com/#dns-records-for-a-zone-list-dns-records
 ```
@@ -62,3 +63,9 @@ Values for the second option:
 API_TOKEN                     = 4525cf483cc5cfd049flc9320b638f5e2c2547eb7da41
 
 For more Cloudflare API informations read the [Cloudflare API documentation v4](https://api.cloudflare.com/)
+
+## Contributors
+- @bidulo
+- @alexander-bauer
+- @ashtacore
+- @ElioLopez
