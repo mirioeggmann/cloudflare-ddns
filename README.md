@@ -65,7 +65,7 @@ API_TOKEN                     = 4525cf483cc5cfd049flc9320b638f5e2c2547eb7da41
 For more Cloudflare API informations read the [Cloudflare API documentation v4](https://api.cloudflare.com/)
 
 ## Contributors
-- @bidulo
-- @alexander-bauer
-- @ashtacore
-- @ElioLopez
+- [@bidulo](https://github.com/bidluo)
+- [@alexander-bauer](https://github.com/alexander-bauer)
+- [@ashtacore](https://github.com/ashtacore)
+- [@ElioLopez](https://github.com/ElioLopez)
