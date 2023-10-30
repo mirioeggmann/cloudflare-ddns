@@ -69,3 +69,7 @@ For more Cloudflare API informations read the [Cloudflare API documentation v4](
 - [@alexander-bauer](https://github.com/alexander-bauer)
 - [@ashtacore](https://github.com/ashtacore)
 - [@ElioLopez](https://github.com/ElioLopez)
+- [@nicholascioli](https://github.com/nicholascioli)
+
+and the one and only
+- [@dependabot](https://github.com/dependabot)
