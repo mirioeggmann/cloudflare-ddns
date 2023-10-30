@@ -38,9 +38,9 @@ jobs:
         id: docker_image_tag
         run: |
           if [[ $GITHUB_REF == refs/tags/* ]]; then
-            echo "::set-output name=tag::${GITHUB_REF#refs/tags/}"
+            echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
           else
-            echo "::set-output name=tag::$GITHUB_SHA"
+            echo "tag=$GITHUB_SHA" >> $GITHUB_OUTPUT
           fi
       - name: Run Buildx
         run: |
