@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
             - name: cloudflare-ddns
-              image: mirioeggmann/cloudflare-ddns:latest
+              image: mirioeggmann/cloudflare-ddns:v0.5.1
               env:
               - name: ZONE_ID
                 value: ""
