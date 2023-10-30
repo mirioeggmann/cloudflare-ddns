@@ -32,7 +32,14 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      -
-        name: Run Buildx
+      - name: Determine Docker image tag
+        id: docker_image_tag
         run: |
-          docker build --platform linux/amd64,linux/arm64,linux/arm/v7 -t ${{ secrets.DOCKER_REPO }}:latest -t ${{ secrets.DOCKER_REPO }}:$GITHUB_SHA --push . 
+          if [[ $GITHUB_REF == refs/tags/* ]]; then
+            echo "::set-output name=tag::${GITHUB_REF#refs/tags/}"
+          else
+            echo "::set-output name=tag::$GITHUB_SHA"
+          fi
+      - name: Run Buildx
+        run: |
+          docker build --platform linux/amd64,linux/arm64,linux/arm/v7 -t ${{ secrets.DOCKER_REPO }}:latest -t ${{ secrets.DOCKER_REPO }}:${{ steps.docker_image_tag.outputs.tag }} --push . 
