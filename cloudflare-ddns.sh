@@ -26,11 +26,13 @@ fi
 echo "Using IP: $IP" 1>&2
 
 # Dig the old IP and exit out if they are the same
-: "${OLD_IP:=$(dig +short @1.1.1.1 $NAME | tail -n1)}"
-echo "Using Old IP: $OLD_IP" 1>&2
-if [[ "${IP}" == "${OLD_IP}" ]]; then
-  echo "IP has not changed. Exiting..."
-  exit 0
+if [[ "$PROXIED" == "false" ]]; then # Execute dig only if PROXIED is set to false
+  : "${OLD_IP:=$(dig +short @1.1.1.1 $NAME | tail -n1)}"
+  echo "Using Old IP: $OLD_IP" 1>&2
+  if [[ "${IP}" == "${OLD_IP}" ]]; then
+    echo "IP has not changed. Exiting..."
+    exit 0
+  fi
 fi
 
 PAYLOAD="{\"type\":\"A\",\"name\":\"$NAME\",\"content\":\"$IP\",\"proxied\":$PROXIED,\"ttl\":1}"
