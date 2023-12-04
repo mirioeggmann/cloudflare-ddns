@@ -10,6 +10,12 @@ on:
 jobs:
   buildx:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+      id-token: write 
+
     if: |
         (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]') ||
         (github.event_name != 'pull_request_target' && github.actor != 'dependabot[bot]')
