@@ -62,6 +62,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - id: docker_meta
+        uses: docker/metadata-action@v4.4.0
+        with:
+          images: ghcr.io/mirioeggmann/cloudflare-ddns
+          tags: type=sha,format=long
       - name: Build and Push container images
         uses: docker/build-push-action@v4
         id: build-and-push
@@ -71,11 +76,14 @@ jobs:
           tags: ghcr.io/${{ github.repository }}:latest
       #- name: Sign image with a key
       #  run: |
-      #    cosign sign --yes --key env://COSIGN_PRIVATE_KEY  ghcr.io/${{ github.repository }}:latest
+      #    cosign sign --yes --key env://COSIGN_PRIVATE_KEY "${TAGS}@${DIGEST}"
       #  env:
+      #    TAGS: ${{ steps.docker_meta.outputs.tags }}
       #    COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
       #    COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
+      #    DIGEST: ${{ steps.build-and-push.outputs.digest }}
       - name: Sign the images with GitHub OIDC Token
         env:
           DIGEST: ${{ steps.build-and-push.outputs.digest }}
-        run: cosign sign --yes ghcr.io/${{ github.repository }}:latest
+          TAGS: ${{ steps.docker_meta.outputs.tags }}
+        run: cosign sign --yes "${TAGS}@${DIGEST}"
