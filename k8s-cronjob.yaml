@@ -4,6 +4,8 @@ metadata:
   name: cloudflare-ddns
 spec:
   schedule: "*/5 * * * *"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3  
   jobTemplate:
     spec:
       template:
