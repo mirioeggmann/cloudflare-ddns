@@ -28,10 +28,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-      - name: Install Cosign
-        uses: sigstore/cosign-installer@v3.4.0
-        with:
-          cosign-release: main
+#      - name: Install Cosign
+#        uses: sigstore/cosign-installer@v3.4.0
+#        with:
+#          cosign-release: main
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Setup buildx
@@ -82,8 +82,8 @@ jobs:
       #    COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
       #    COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
       #    DIGEST: ${{ steps.build-and-push.outputs.digest }}
-      - name: Sign the images with GitHub OIDC Token
-        env:
-          DIGEST: ${{ steps.build-and-push.outputs.digest }}
-          TAGS: ${{ steps.docker_meta.outputs.tags }}
-        run: cosign sign --yes "${TAGS}@${DIGEST}"
+#      - name: Sign the images with GitHub OIDC Token
+#        env:
+#          DIGEST: ${{ steps.build-and-push.outputs.digest }}
+#          TAGS: ${{ steps.docker_meta.outputs.tags }}
+#        run: cosign sign --yes "${TAGS}@${DIGEST}"
