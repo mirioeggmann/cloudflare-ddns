@@ -68,7 +68,7 @@ jobs:
           images: ghcr.io/mirioeggmann/cloudflare-ddns
           tags: type=sha,format=long
       - name: Build and Push container images
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         id: build-and-push
         with:
           platforms: linux/amd64,linux/arm/v7,linux/arm64
